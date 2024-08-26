@@ -1,0 +1,120 @@
+ body {
+    margin: 0;
+    padding: 0;
+    overflow-y : scroll;
+    overflow-x: hidden;
+ }
+
+#contentPage {
+    position: absolute;
+    top: 0vh;
+    height: 100vh;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #141e30, #243b55);
+}
+
+        /* Styles pour le formulaire */
+        .form-container {
+            position: absolute;
+            top : 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            width: 60vw; /* Formulaire de 60vw de largeur */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .radio-group label {
+            margin-bottom: 5px;
+        }
+
+        .inline-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Diviser en deux colonnes */
+            gap: 20px;
+            align-items: center;
+        }
+
+        .inline-group > div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .small-input {
+            width: 100px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .submit-btn:focus {
+            outline: none;
+        }

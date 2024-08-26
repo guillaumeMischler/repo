@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Rapport de Maintenance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="contentPage">
+        <div class="form-container">
+            <h2>Formulaire de Rapport de Maintenance</h2>
+            <form id="maintenanceForm">
+                <!-- Première ligne : Machine et Types de Maintenance -->
+                <div class="form-group inline-group">
+                    <div>
+                        <label for="machine">Machine</label>
+                        <select id="machine" name="machine" required>
+                            <option value="" disabled selected>Sélectionner</option>
+                            <option value="Biesse 1 - Rover A">Biesse 1 - Rover A</option>
+                            <option value="Biesse 2 - Rover A">Biesse 2 - Rover A</option>
+                            <option value="Biesse 3 - Rover A">Biesse 3 - Rover A</option>
+                            <option value="Biesse 4 - Rover A">Biesse 4 - Rover A</option>
+                            <option value="Biesse 5 - Rover B">Biesse 5 - Rover B</option>
+                            <option value="Biesse 6 - Rover B">Biesse 6 - Rover B</option>
+                        </select>
+                    </div>
+                    <div class="radio-group">
+                        <label>Type de Maintenance</label>
+                        <label><input type="radio" name="maintenance" value="preventif" required> Préventif</label>
+                        <label><input type="radio" name="maintenance" value="curatif" required> Curatif</label>
+                        <label><input type="radio" name="maintenance" value="amelioration" required> Amélioration</label>
+                        <label><input type="radio" name="maintenance" value="transformation" required> Transformation</label>
+                    </div>
+                </div>
+
+                <!-- Deuxième ligne : Arrêt production et Début/Fin -->
+                <div class="form-group inline-group">
+                    <div>
+                        <label>Arrêt production</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="arret" value="oui" required> Oui</label>
+                            <label><input type="radio" name="arret" value="non" required> Non</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="start">Début</label>
+                        <input type="datetime-local" id="start" name="start" class="small-input" required>
+                        <label for="end">Fin</label>
+                        <input type="datetime-local" id="end" name="end" class="small-input" required>
+                    </div>
+                </div>
+
+                <!-- Troisième ligne : Nom du technicien -->
+                <div class="form-group">
+                    <label for="technician">Nom du technicien</label>
+                    <select id="technician" name="technician" required>
+                        <option value="" disabled selected>Sélectionner un technicien</option>
+                        <option value="Ylemerre">Ylemerre</option>
+                        <option value="Gmathis">Gmathis</option>
+                    </select>
+                </div>
+
+                <!-- Champ note -->
+                <div class="form-group">
+                    <label for="notes">Notes / Observations</label>
+                    <textarea id="notes" name="notes" placeholder="Écrivez vos observations ici" required></textarea>
+                </div>
+
+                <!-- Bouton de soumission -->
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Soumettre le rapport
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
