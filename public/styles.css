@@ -20,12 +20,13 @@
         /* Styles pour le formulaire */
         .form-container {
             position: absolute;
-            top : 0;
+            top : 1vh;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             backdrop-filter: blur(10px);
             padding: 20px;
-            width: 100vw; /* Formulaire de 60vw de largeur */
+            height : 98vh;
+            width: 90vw; /* Formulaire de 60vw de largeur */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: left;
