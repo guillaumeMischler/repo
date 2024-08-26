@@ -1,48 +1,3 @@
-/*const axios = require('axios');
-
-// URL de votre API REST Google Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycby0kV_2dqU6qR_UcvSqpk4m6u8xRnpcowvUVqkVE92lfUbWgdFWWNvNrB0tNI2dca97nw/exec';
-
-// Fonction pour récupérer les données
-async function fetchSheetData() {
-    try {
-        const response = await axios.get(API_URL);
-        console.log('Data from Google Sheets:', response.data);
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
-
-// Appel de la fonction
-fetchSheetData();
-*/
-
-/*
-
-const axios = require('axios');
-const qs = require('qs'); // Importer qs pour l'encodage des données
-
-// URL de votre API REST Google Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycby0kV_2dqU6qR_UcvSqpk4m6u8xRnpcowvUVqkVE92lfUbWgdFWWNvNrB0tNI2dca97nw/exec';
-
-// Fonction pour ajouter des données
-async function addSheetData(newData) {
-    try {
-        // Encoder les données en URL
-        const response = await axios.post(API_URL, qs.stringify(newData));
-        console.log('Response from Google Sheets:', response.data);
-    } catch (error) {
-        console.error('Error adding data:', error);
-    }
-}
-
-// Appel de la fonction avec des données d'exemple
-addSheetData({
-    id: 'ettt',
-    test: 'trqsfsdffdffs'
-});
-
-*/
 const express = require('express');
 const axios = require('axios');
 const qs = require('qs');
@@ -70,6 +25,8 @@ app.post('/api/addData', async (req, res) => {
     try {
         // Encoder les données en URL-encoded
         const encodedData = qs.stringify(data);
+        console.log('Données encodées:', encodedData);
+        
         // Envoie les données à l'API Google Sheets
         const response = await axios.post(API_URL, encodedData, {
             headers: {
@@ -80,7 +37,7 @@ app.post('/api/addData', async (req, res) => {
 
         res.json({ success: true, data: response.data });
     } catch (error) {
-        console.error('Erreur lors de l\'envoi des données:', error);
+        console.error('Erreur lors de l\'envoi des données:', error.message);
         res.json({ success: false, message: 'Erreur lors de l\'envoi des données.' });
     }
 });
