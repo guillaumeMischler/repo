@@ -8,7 +8,6 @@
 #contentPage {
     position: absolute;
     top: 0vh;
-    height: 100vh;
     left: 0;
     width: 100vw;
     display: flex;
