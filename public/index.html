@@ -13,31 +13,31 @@
             <form id="maintenanceForm">
                 <!-- Première ligne : Machine et Types de Maintenance -->
                 <div class="form-group inline-group">
-                    <div>
-                        <label for="machine">Machine</label>
-                        <select id="machine" name="machine" required>
-                            <option value="" disabled selected>Sélectionner</option>
-                            <option value="Biesse 1 - Rover A">Biesse 1 - Rover A</option>
-                            <option value="Biesse 1 - Stream A">Biesse 1 - Stream A</option>
-                            <option value="Biesse 2 - Rover A">Biesse 2 - Rover A</option>
-                            <option value="Biesse 3 - Rover A">Biesse 3 - Rover A</option>
-                            <option value="Biesse 3 - Jade 240">Biesse 3 - Jade 240</option>
-                            <option value="Biesse 4 - Rover A">Biesse 4 - Rover A</option>
-                            <option value="Biesse 4 - Jade 240">Biesse 4 - Jade 240</option>
-                            <option value="Biesse 5 - Rover B">Biesse 5 - Rover B</option>
-                            <option value="Biesse 6 - Rover B">Biesse 6 - Rover B</option>
-                            <option value="CN EASTMAN 1">CN EASTMAN 1</option>
-                            <option value="Carousel EASTMAN 1">Carousel EASTMAN 1</option>
-                            <option value="CN EASTMAN 2">CN EASTMAN 2</option>
-                            <option value="Carousel EASTMAN 2">Carousel EASTMAN 2</option>
-                            <option value="Biesse 6 - Rover B">Carrousel EASTMAN 2</option>
-                            <option value="Aspiration Schuko 1">Aspiration Schuko 1</option>
-                            <option value="Aspiration Schuko 2">Aspiration Schuko 2</option>
-                            <option value="Compresseur Atlas 1">Compresseur Atlas 1</option>
-                            <option value="Compresseur Atlas 2">Compresseur Atlas 2</option>
-                            <option value="Assecheur Atlas">Assecheur Atlas</option>
-                        </select>
-                    </div>
+<div class="form-group">
+    <label for="machine">Machine</label>
+    <select id="machine" name="machine" required>
+        <option value="Biesse 1 - Rover A">Biesse 1 - Rover A</option>
+        <option value="Biesse 1 - Stream A">Biesse 1 - Stream A</option>
+        <option value="Biesse 2 - Rover A">Biesse 2 - Rover A</option>
+        <option value="Biesse 3 - Rover A">Biesse 3 - Rover A</option>
+        <option value="Biesse 3 - Jade 240">Biesse 3 - Jade 240</option>
+        <option value="Biesse 4 - Rover A">Biesse 4 - Rover A</option>
+        <option value="Biesse 4 - Jade 240">Biesse 4 - Jade 240</option>
+        <option value="Biesse 5 - Rover B">Biesse 5 - Rover B</option>
+        <option value="Biesse 6 - Rover B">Biesse 6 - Rover B</option>
+        <option value="CN EASTMAN 1">CN EASTMAN 1</option>
+        <option value="Carousel EASTMAN 1">Carousel EASTMAN 1</option>
+        <option value="CN EASTMAN 2">CN EASTMAN 2</option>
+        <option value="Carousel EASTMAN 2">Carousel EASTMAN 2</option>
+        <option value="Aspiration Schuko 1">Aspiration Schuko 1</option>
+        <option value="Aspiration Schuko 2">Aspiration Schuko 2</option>
+        <option value="Compresseur Atlas 1">Compresseur Atlas 1</option>
+        <option value="Compresseur Atlas 2">Compresseur Atlas 2</option>
+        <option value="Assecheur Atlas">Assecheur Atlas</option>
+    </select>
+</div>
+
+
                     <div class="radio-group">
                         <label>Type de Maintenance</label>
                         <label><input type="radio" name="maintenance" value="preventif" required> Préventif</label>
@@ -47,14 +47,13 @@
                     </div>
                 </div>
 
-                <!-- Deuxième ligne : Arrêt production et Début/Fin -->
+                <!-- Ligne de séparation -->
+                <hr>
+
+                <!-- Deuxième ligne : Intervention, Début et Fin -->
                 <div class="form-group inline-group">
                     <div>
-                        <label>Arrêt production</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="arret" value="oui" required> Oui</label>
-                            <label><input type="radio" name="arret" value="non" required> Non</label>
-                        </div>
+                        <label for="intervention">Intervention</label>
                     </div>
                     <div>
                         <label for="start">Début</label>
@@ -64,7 +63,30 @@
                     </div>
                 </div>
 
-                <!-- Troisième ligne : Nom du technicien -->
+                <!-- Ligne de séparation -->
+                <hr>
+
+                <!-- Troisième ligne : Arrêt production et Début/Fin -->
+                <div class="form-group inline-group">
+                    <div>
+                        <label>Arrêt production</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="arret" value="oui" required> Oui</label>
+                            <label><input type="radio" name="arret" value="non" required> Non</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="startProduction">Début</label>
+                        <input type="datetime-local" id="startProduction" name="startProduction" class="small-input" required>
+                        <label for="endProduction">Fin</label>
+                        <input type="datetime-local" id="endProduction" name="endProduction" class="small-input" required>
+                    </div>
+                </div>
+
+                <!-- Ligne de séparation -->
+                <hr>
+
+                <!-- Quatrième ligne : Nom du technicien -->
                 <div class="form-group">
                     <label for="technician">Nom du technicien</label>
                     <select id="technician" name="technician" required>
@@ -74,11 +96,17 @@
                     </select>
                 </div>
 
-                <!-- Champ note -->
+                <!-- Ligne de séparation -->
+                <hr>
+
+                <!-- Cinquième ligne : Champ note -->
                 <div class="form-group">
                     <label for="notes">Notes / Observations</label>
                     <textarea id="notes" name="notes" placeholder="Écrivez vos observations ici" required></textarea>
                 </div>
+
+                <!-- Ligne de séparation -->
+                <hr>
 
                 <!-- Bouton de soumission -->
                 <button type="submit" class="submit-btn">
