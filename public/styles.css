@@ -6,6 +6,9 @@
  }
 
 #contentPage {
+ background-color: rgba(50, 50, 50, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     position: absolute;
     top: 0vh;
     height: 170vh;
@@ -14,7 +17,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #141e30, #243b55);
 }
 
         /* Styles pour le formulaire */
